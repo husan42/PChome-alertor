@@ -24,8 +24,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('xBfpT95UHcNXloINyxetFP8eFR+NKNOrXzXpUy6fplxWl9WnwwGqXnribJ536y/TjTRmYRtJJ2UhCOSTlLKScOLxMU/glZ9M622bq+0aiZ8NITWt2zwaNG4tEXhn85H000StkjlwQlAmgs+wQPEgBgdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('67e355a5dec31171a79dee3eb500f805')
+line_bot_api = LineBotApi('')
+handler = WebhookHandler('')
 
 @app.route("/", methods=['GET'])
 def index():
@@ -55,7 +55,7 @@ def handle_message(event):
     get_message = event.message.text
     print(get_message)
     user_id = event.source.user_id
-    register_url = 'https://notify-bot.line.me/oauth/authorize?response_type=code&scope=notify&response_mode=form_post&client_id=URUW3cHl8RPLZRgsN85QBV&redirect_uri=https://line.husan.cc/register&state=' + user_id
+    register_url = 'https://notify-bot.line.me/oauth/authorize?response_type=code&scope=notify&response_mode=form_post&client_id="id"&redirect_uri=https://line.husan.cc/register&state=' + user_id
     mage = re.split(r'[\s]\s*',get_message)
     try:
         if mage[0] == "註冊":
@@ -131,8 +131,8 @@ def get_token(code):
         "grant_type":"authorization_code",
         "code": code,
         "redirect_uri":"https://line.husan.cc/register", # host_ip
-        "client_id":"URUW3cHl8RPLZRgsN85QBV", #notify client_id
-        "client_secret":"hJ7aWBSbuoV2V3JATfoDnToasWlmLbpb6DSnQhE9DID" #notify client_secret
+        "client_id":"client_id", #notify client_id
+        "client_secret":"client_secret" #notify client_secret
     }
     r = requests.post('https://notify-bot.line.me/oauth/token',headers=headers,params=params)
     source = json.loads(r.text)
@@ -155,7 +155,7 @@ def send_test_message(access_token):
 #使用者資料存入資料庫
 def save_profile(username, code, user_id, access_token): 
     try:
-        connection = mariadb.connect(host='192.168.10.10', user='admin', port='3307', password='001222', database='line_notify')
+        connection = mariadb.connect(host='192.168.1.10', user='admin', port='3307', password='pw', database='line_notify')
         if connection.is_connected():
             db_Info = connection.get_server_info()
             print("資料庫版本：", db_Info)
@@ -178,7 +178,7 @@ def save_profile(username, code, user_id, access_token):
 #新增訂閱項目
 def add_item(item_id, user_id,w_price):
     try:
-        connection = mariadb.connect(host='192.168.10.10', user='admin', port='3307', password='001222', database='line_notify')
+        connection = mariadb.connect(host='192.168.1.10', user='admin', port='3307', password='pw', database='line_notify')
         if connection.is_connected():
             cursor = connection.cursor()
             acc_token = get_notify_id(user_id)
@@ -199,7 +199,7 @@ def add_item(item_id, user_id,w_price):
 #刪除訂閱項目
 def del_item(item_id, user_id):
     try:
-        connection = mariadb.connect(host='192.168.10.10', user='admin', port='3307', password='001222', database='line_notify')
+        connection = mariadb.connect(host='192.168.1.10', user='admin', port='3307', password='pw', database='line_notify')
         if connection.is_connected():
             cursor = connection.cursor()
             cursor.execute("DELETE FROM sub_list WHERE item_id = '%s' AND user_id = '%s'"%(item_id,user_id))
@@ -215,7 +215,7 @@ def del_item(item_id, user_id):
 #查詢訂閱項目            
 def search_sub(user_id):
     try:
-        connection = mariadb.connect(host='192.168.10.10', user='admin', port='3307', password='001222', database='line_notify')
+        connection = mariadb.connect(host='192.168.1.10', user='admin', port='3307', password='pw', database='line_notify')
         if connection.is_connected():
             cursor = connection.cursor()
             cursor.execute("SELECT item_id , w_price FROM sub_list WHERE user_id LIKE '%s'"%(user_id))
@@ -233,7 +233,7 @@ def search_sub(user_id):
 #取得notify_access_token
 def get_notify_id(user_id):
     try:
-        connection = mariadb.connect(host='192.168.10.10', user='admin', port='3307', password='001222', database='line_notify')
+        connection = mariadb.connect(host='192.168.1.10', user='admin', port='3307', password='pw', database='line_notify')
         if connection.is_connected():
             cursor = connection.cursor()
             cursor.execute("select database();")
