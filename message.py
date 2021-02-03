@@ -33,9 +33,11 @@ def itemid_find_user_id(item_id):
             acc_token = cursor.fetchall()
             token = [a_list[0] for a_list in acc_token]
             idd,price,qty,salestatus,url,dtime = get_sum(item_id, token)
+            save_time = int(datetime.datetime.now().strftime("%H"))
             if idd:
-                cursor.execute("INSERT INTO item_detail (id, price, qty, salestatus, url, dtime) VALUES ('%s','%d','%d','%d','%s','%s')"%(idd,price,qty,salestatus,url,dtime))
-                connection.commit()
+                if save_time == 0 or save_time == 12:
+                    cursor.execute("INSERT INTO item_detail (id, price, qty, salestatus, url, dtime) VALUES ('%s','%d','%d','%d','%s','%s')"%(idd,price,qty,salestatus,url,dtime))
+                    connection.commit()
             return token
     except Error as e:
         print("資料庫連接失敗：", e)
