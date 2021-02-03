@@ -62,7 +62,7 @@ list
 * 當訂閱商品 有貨 & 售價低於設定價格，就會傳送訊息至line_notify
 <img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/notify.PNG">
 
-## 所使用到的資源
+## 所使用到的工具
 
 * python  
 * line API
