@@ -54,4 +54,18 @@ list
 ```
 圖片同上
 
+### 訂閱通知
 
+* 系統每15min會去爬商品資訊一次，
+* 當訂閱商品 有貨 & 售價低於設定價格，就會傳送訊息至line_notify
+<img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/notify.PNG">
+
+## 所使用到的資源
+
+* python  
+* line API
+* flask
+* mariadb
+* domain name
+* Let's Encrypt SSL
+* Bash shell Crontab
