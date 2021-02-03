@@ -11,7 +11,9 @@ https://lin.ee/7NQJJFg
 
 <img align="left" src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register.PNG"><img  src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register_done.PNG">  
 
-＜/br＞  
+
+
+
 ### 訂閱商品
 查詢物品ID
 * PChome 商品連結中prod與?中間就是商品ID
