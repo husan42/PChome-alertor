@@ -7,9 +7,10 @@ https://lin.ee/7NQJJFg
 
 ### 註冊
 * 加入官方帳號後，傳送訊息"註冊"，會回傳一個網址，點選網址後註冊。
-* 如有註冊成功會在line_notify收到"帳號連結成功"訊息。    
-<img align="left" src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register.PNG"><img  src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register_done.PNG">  
+* 如有註冊成功會在line_notify收到"帳號連結成功"訊息。
 
+<img align="left" src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register.PNG"><img  src="https://github.com/husan42/Line-BOT-Pchome/blob/main/register_done.PNG">  
+＜/br＞
 ### 訂閱商品
 查詢物品ID
 * PChome 商品連結中prod與?中間就是商品ID
