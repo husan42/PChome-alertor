@@ -1,4 +1,6 @@
-# Line-BOT-Pchome
+# PChome-alertor
+
+使用Line官方帳號訂閱PChome商品，當有貨or物品降價時發訊息通知。
 
 體驗網址
 https://lin.ee/7NQJJFg
