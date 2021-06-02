@@ -35,7 +35,7 @@ https://24h.pchome.com.tw/prod/DYAJID-A900AVJ62?fq=/S/DYAJID
 
 規則如下
 ```
-add 商品ID 通知價格(0時為有貨時就通知) 備註(可不用)
+add 商品ID 通知價格(0為有貨時就通知) 備註(可不用)
 範例:
 add DGBJDE-1900AWVFF 9500 switch主機 
 add DYAJID-A900AVJ62 15000
@@ -67,7 +67,16 @@ del 5
 規則如下
 ```
 list
+
+25.DGBJDE-1900AWVFF
+└9500 switch主機
+
+25               為商品號碼
+DGBJDE-1900AWVFF 為商品ID
+9500             為通知價格
+switch主機        訂閱備註
 ```
+
 <img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/list.png">
 
 ### 查詢歷史價格
@@ -84,9 +93,9 @@ plt 6
 ```
 <img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/plt.png">
 
-###回傳商品網址
+### 回傳商品網址
 
-*回傳指定商品購買網址
+* 回傳指定商品購買網址
 
 規則如下
 ```
