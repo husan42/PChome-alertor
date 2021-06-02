@@ -26,6 +26,8 @@ help
 ### 訂閱商品
 查詢物品ID
 * PChome 商品連結中prod與?中間就是商品ID
+<img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/detail.png">
+
 
 https://24h.pchome.com.tw/prod/DYAJID-A900AVJ62?fq=/S/DYAJID
 
@@ -56,7 +58,7 @@ del DYAJID-A900AVJ4G
 del 5
 ```
 
-<img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/del.PNG">
+<img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/del.png">
 
 ### 查詢訂閱清單
 
