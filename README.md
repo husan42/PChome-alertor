@@ -41,7 +41,7 @@ add DGBJDE-1900AWVFF 9500 switch主機
 add DYAJID-A900AVJ62 15000
 ```
 
-增加 此商品 價格低於9500時通知 備註為：swirch主機
+增加 此商品 價格低於9500時通知 備註為：switch主機
 
 <img src="https://github.com/husan42/Line-BOT-Pchome/blob/main/add.png">
 
